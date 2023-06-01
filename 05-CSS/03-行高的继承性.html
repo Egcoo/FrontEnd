@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 更文字相关的几乎都可以继承 */
+    body {
+      color: pink;
+      /* font-size: 15px;
+      line-height: normal; */
+      /* 一个是字体大小一个是行高 */
+      /* font: 15px/24px; */
+      font: 15px/1.5 '华文细黑';
+    }
+
+    div {
+      /* 子元素继承了父元素 body 的行高 1.5 */
+      /* 这个1.5 就是当前元素文字大小 font-size 的1.5倍 所以当前div 的行高就是21像素 */
+      font-size: 14px;
+    }
+    p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>粉红色的回忆</div>
+  <p>粉红色的回忆</p>
+  <ul>
+    <li>这个没有指定</li>
+  </ul>
+</body>
+
+</html>

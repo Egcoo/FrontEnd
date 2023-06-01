@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<!-- 表单的组成：表单域、表单元素(input、select下拉表单、textarea)、提示信息 -->
+<!-- Label标签简单来讲就是扩大点击范围 -->
+
+<body>
+
+  <form action="demo.php" method="post" name="name1">
+    <label for="text"> 用户名：</label><input type="text" value="请输入" id="text"> <br>
+    密码：<input type="password"> <br>
+    <!-- 需要有相同的name 属性 -->
+    <!-- <input type="text" name="" id=""> -->
+    <!-- checked 主要针对单选按钮和复选框,主要作用是一打开页面就自动选中 -->
+    性别：男<input type="radio" name="gender" id=""> 女<input type="radio" name="gender" id="" checked="checked"> <br>
+    爱好：音乐<input type="checkbox"> 体育<input type="checkbox"> 科技<input type="checkbox"> <br>
+    <input type="submit" value="注册"> <br>
+    <input type="reset" value="重新填写"> <br>
+    <input type="button" value="获取验证码">
+    上传头像：<input type="file">
+
+    Base：
+    <select name="" id="">
+      <option value="">北京</option>
+      <option value="">天津</option>
+      <option value="">California</option>
+      <option value="">London</option>
+
+    </select> <br>
+
+    今日反馈：<br>
+    <textarea name="" id="" cols="30" rows="10">
+
+    </textarea>
+  </form>
+
+</body>
+
+</html>
