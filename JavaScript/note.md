@@ -55,6 +55,12 @@ Consolas
 2. 值类型——数据类型：不可改变的原始值(栈数据)、引用值(堆数据)，唯一的不同是赋值形式的不同。
 3. 真想删除东西就需要二次覆盖。
 
+## 7 种基本类型
+
+1. Number, Sting, Boolean, underfined, Null, Symbol, BigInt
+2. 独特的动态类型机制
+3. 没声明就用，会让 js 在全局对象上创建一个属性
+
 ## 逻辑运算符
 
 1. undefined, null, NaN, " ", 0, false ===> false
