@@ -37,7 +37,7 @@ Consolas
 8. web 开发的变化本身就非常快，你要学会去适应新的技术。
 9. **keep going, keep coding and keep building.**
 
-## How to think like a Developer & Problem slover
+### How to think like a Developer & Problem slover
 
 1. 当我们说解决问题的时候，我们说的是一个真正的需要解决方案的真正问题。
 2. Stay calm and slow down, don't just jump at a problem withouta plan
@@ -48,6 +48,14 @@ Consolas
    3. 不害怕做尽可能多的研究。
    4. 对于一个大的问题，可以尝试着写一些伪代码
    5. 培养真正的好奇心和热情。
+
+## Javascript fundamentals - part 1
+
+1. 5 falsy values: 0, "", undefined, null, NaN
+2. 根据干净代码的一般原则，尽量避免使用 loose equality operator
+3. 语句(statement)和表达式(expression)：表达式产生值，而语句就是翻译我们行为的完整的句子。
+   - 在模板文字(template literal) 中，我们只能插入表达式，不能插入语句。
+4.
 
 ## js 介绍
 
