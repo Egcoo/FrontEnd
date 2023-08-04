@@ -161,51 +161,51 @@
    3. Use whitespace **between elements**（在元素之间使用空格）
    4. Inside **groups of elements**, try to use whitespace instead of lines（在**元素组**中，尝试使用空格而不是行）
 3. How much whitespace
-   1. **The more some elements (or groups of elements) belong ttogether, the closer they should be!**
-   2. Start with **a lot of whitespace**, maybe even too much! Then **remove whitespace** from there Too much whitespace looks **detached,** too little looks too **crammed**
-   3. Match **other design choices**. If you have big text or big icons, you need more whitespace
-   4. Try a hard rule, such as using **multiples of 16px** for all spacing
+   1. **The more some elements (or groups of elements) belong ttogether, the closer they should be!** (一些元素(或元素组)越接近，它们应该越接近!)
+   2. Start with **a lot of whitespace**, maybe even too much! Then **remove whitespace** from there Too much whitespace looks **detached,** too little looks too **crammed**(大量的空格开始，甚至可能太多!然后删除空格太多的空格看起来超然，太少看起来拥挤)
+   3. Match **other design choices**. If you have big text or big icons, you need more whitespace(匹配其他设计选择。如果你有大文本或大图标，你需要更多的空白)
+   4. Try a hard rule, such as using **multiples of 16px** for all spacing(尝试一个严格的规则，例如使用 16px 的\*\*倍的所有间距)
 
 ### Visual Hierarchy
 
 1. What is Visual Hierarchy
-   1. Visual hierarchy is about **establishing which elements** of a design **are the most important ones**
-   2. Visual hierarchy is about **drawing attention** to these most important elements
-   3. Visual hierarchy is about **defining a "path"** for users, to guide them through the page
-   4. We use a combination of **position, size, colors**, spacing, borders, and shadows to establish a meaningful visual hierarchy between elements/components
+   1. Visual hierarchy is about **establishing which elements** of a design **are the most important ones**(视觉层次是关于确定设计中哪些元素是最重要的)
+   2. Visual hierarchy is about **drawing attention** to these most important elements（视觉层次就是为了那些最重要的元素吸引注意力）
+   3. Visual hierarchy is about **defining a "path"** for users, to guide them through the page（视觉层次是为用户定义一条“路径”，引导他们浏览页面）
+   4. We use a combination of **position, size, colors**, spacing, borders, and shadows to establish a meaningful visual hierarchy between elements/components（我们使用位置、大小、颜色、间距、边框和阴影的组合来建立元素/组件之间有意义的视觉层次）
 2. visual hierarchy fundamentals
-   1. Position important elements closer to the top the page, whiere they get more attention
-   2. Use images mindfully, as they draw a lot of attention (largeer images get more attention)
-   3. Whitespace creates separation, so use whitespace strategically to emphasize elements
+   1. Position important elements closer to the top the page, whiere they get more attention（将重要的元素放置在靠近页面顶部的位置，这样可以吸引更多的注意力）
+   2. Use images mindfully, as they draw a lot of attention (largeer images get more attention)（谨慎地使用图片，因为它们会吸引很多注意力(更大的图片会吸引更多的注意力)）
+   3. Whitespace creates separation, so use whitespace strategically to emphasize elements（空白会造成分隔，所以策略性地使用空白来强调元素）
 3. visual hierarchy for text elements
-   1. For text elements, use **font size, font weight, color, and whhitespace** to convey importance
-   2. What text elements to emphasize? **Titles, sub-titles, linlks, buttons, data points, icons**
-   3. You can also **de-emphasize less important text**, like labelsor secondary/additional information
+   1. For text elements, use **font size, font weight, color, and whhitespace** to convey importance（对于文本元素，使用字体大小、字体粗细、颜色和空白来传达重要性）
+   2. What text elements to emphasize? **Titles, sub-titles, linlks, buttons, data points, icons**（要强调哪些文本元素? 标题，副标题，链接，按钮，数据点，图标）
+   3. You can also **de-emphasize less important text**, like labelsor secondary/additional information（你也可以弱化不太重要的文本，如标签或辅助/附加信息）
 4. visual hierarchy between components
-   1. Emphasize an important component using **background ccolor, shadow, or border** (or multiple)
-   2. Try emphasizing some component A over component B **byde-emphasizing component B**
-   3. What components to emphasize? **Testimonials, call-to-acition sections, highlight sections preview cards, forms, pricing tables, important rows/columins in tables, etc.**
+   1. Emphasize an important component using **background ccolor, shadow, or border** (or multiple)（使用背景色、阴影或边框(或多种)来强调重要的组件。）
+   2. Try emphasizing some component A over component B **byde-emphasizing component B**（试着通过强调组件 B 来强调组件 A）
+   3. What components to emphasize? **Testimonials, call-to-acition sections, highlight sections preview cards, forms, pricing tables, important rows/columins in tables, etc.**（要强调哪些组成部分? 推荐，号召行动部分，突出部分预览卡，表格，价格表，表中的重要行/列等）
 
 ### User Experience
 
 1. Design is not just what it looks like and feels like. Design is how it works —— steve jobs
-   1. Ul is graphical interface: UI Design is what makes an **interface beautiful**
-   2. UX is experience with interface UX Design is what makes an **interface useful and functional**
+   1. Ul is graphical interface: UI Design is what makes an **interface beautiful**（UI 是图形界面:UI 设计是使界面美观的东西）
+   2. UX is experience with interface UX Design is what makes an **interface useful and functional**（UX 是界面经验 UX 设计是使界面有用和功能的东西）
 2. UX DESIGN GUIDING PRINCIPLE: GOALS
-   1. A website or application exists for a reason: a user has3a goal for visiting it, and a business has a goal for creatting it
+   1. A website or application exists for a reason: a user has3a goal for visiting it, and a business has a goal for creatting it（网站或应用程序的存在是有原因的:用户有访问它的目标，企业有创建它的目标）
 3. UX rules for usability
-   1. Don't design complicated layouts. Don't reinvent the wheel. **Use patterns that users know**
-   2. Make your call-to-action the **most prominent element**, and make the **text descriptive**
-   3. Use **blue text** and **underlined text** only for **links**!
-   4. Animations should have a purpose and be fast: between 200 and 500 ms
-   5. In forms, align labels and fields in a single **vertical line**, to make the form **easier to scan**
-   6. Offer users **good feedback** for all actions: form errors, form success, etc. [web apps]
-   7. Place action buttons where they will create an effect (law of locality) [web apps]
+   1. Don't design complicated layouts. Don't reinvent the wheel. **Use patterns that users know**（不要设计复杂的布局。不要重新发明轮子。使用用户熟悉的模式）
+   2. Make your call-to-action the **most prominent element**, and make the **text descriptive**（使你的号召成为最突出的元素，并使文本具有描述性）
+   3. Use **blue text** and **underlined text** only for **links**!（使用**蓝色文本**和**下划线文本**仅用于**链接**!）
+   4. Animations should have a purpose and be fast: between 200 and 500 ms（动画应该有目的，并且速度要快:在 200 到 500 毫秒之间）
+   5. In forms, align labels and fields in a single **vertical line**, to make the form **easier to scan**（在表单中，将标签和字段对齐在一条垂直线上，使表单更容易扫描）
+   6. Offer users **good feedback** for all actions: form errors, form success, etc. [web apps]（用户提供**良好的反馈**所有动作:表单错误，表单成功等）
+   7. Place action buttons where they will create an effect (law of locality) [web apps]（将动作按钮放置在能产生效果的地方(局部性法则)）
 4. UX rulex for website content
-   1. Use a descriptive, keyword-focused headline on your main page. Don't be vague or fancy!
-   2. Only include relevant information, efficiently! Cut out fluff andmake the content 100% clear
-   3. Use **simple words!** Avoid technical jargon and "smart-soundding" words
-   4. Break up long text with **sub-headings, images, block quotes, bullet points**, etc.
+   1. Use a descriptive, keyword-focused headline on your main page. Don't be vague or fancy!（在主页上使用一个描述性的、以关键词为中心的标题。不要含糊或花哨）
+   2. Only include relevant information, efficiently! Cut out fluff andmake the content 100% clear（只包含相关信息，高效!去掉多余的内容，使内容 100%清晰）
+   3. Use **simple words!** Avoid technical jargon and "smart-soundding" words（使用简单的单词!避免技术术语和“听起来很聪明”的词语）
+   4. Break up long text with **sub-headings, images, block quotes, bullet points**, etc.（用副标题、图片、引号、项目符号等来分割长文本。）
 
 ### The website personalities- framework
 

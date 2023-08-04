@@ -55,7 +55,10 @@ Consolas
 2. 根据干净代码的一般原则，尽量避免使用 loose equality operator
 3. 语句(statement)和表达式(expression)：表达式产生值，而语句就是翻译我们行为的完整的句子。
    - 在模板文字(template literal) 中，我们只能插入表达式，不能插入语句。
-4.
+
+## Program 5,6,7 summarize
+
+1.
 
 ## js 介绍
 
