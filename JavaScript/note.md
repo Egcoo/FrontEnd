@@ -58,7 +58,50 @@ Consolas
 
 ## Program 5,6,7 summarize
 
-1.
+1. 使用清晰和语义化的变量名。使用像 activePlayer 这样的名称而不是 player。
+2. 将数据与 UI 分离。将数据存储在 scores 和 activePlayer 等变量中，并使用这些数据更新 UI 元素。这使得代码可重用和可维护。
+3. 将逻辑拆分为函数。像 init()， switchPlayer()这样的函数保持了主逻辑的简洁。
+4. 将初始化逻辑封装在函数中。init()函数将游戏状态重置为初始条件
+5. 在 New Game 按钮中添加监听器来调用 init()并重置游戏。
+6. 使用 classList 来切换 UI 状态，而不是直接编辑 HTML。这将状态管理(数据)的职责与 UI 呈现分离开来。
+7. 在每个回合之后检查获胜条件，而不是在最后，提供即时反馈，设置整个状态。
+8. 遵循关注点分离、封装、模块化和使用语义名称等原则。让你的职能集中，只做一件事。并尽可能使用函数重置状态。
+
+## HOW JAVASCRIPT WORKS BEHIND THE SCENES
+
+### overview
+
+1. js 是一个面向对象的，多范式的，解释型，动态的，单线程，垃圾回收机制，具有非阻塞事件循环并发模型的编程语言。
+2. High-level
+3. Garbage-collected
+4. Interpreted or just-in-time compiled
+5. Multi-paradigm
+   1. Procedural programming
+   2. Object-oriented programming (OOP)
+   3. Functional programming (FP)
+6. Prototype-based object-oriented
+7. First-class functions：In a language with first-class functions, functions are simply treated as variables. We can pass them into other functions, and returin them from functions.
+8. Dynamic
+9. Single-threaded
+10. Non-blocking event loop
+
+### THE JAVASCRIPT ENGINE AND RUNTIME
+
+1. 任何一个 js 引擎 = 调用栈（代码实际执行） + 堆（存储程序需要的对象）
+2. 现代 js 引擎混合使用编译和解释 (先通过编译整个编译成机器码，后执行)
+3. 现代引擎的原理：开始编译的结果就是产生一个未优化的机器码，以至于可以快速执行，然后在后台代码继续优化，并且在已经运行的程序执行期间重新编译，并且这个过程会多次持续，直至未优化的代码彻底变成优化后的代码（发生在引擎内部的我们无法通过代码访问的线程）
+4. js runtime: js Engine + web API(为 Engine 提供功能，但不是一部分) + Callback queue（比如事件处理函数，调用过后重新放入回调队列，**当调用栈为空时，回调函数被传回栈**）
+5. Node.js js runtime : js Engine + C++ Bindings & Thread Pool + callback queue
+
+### EXECUTION CONTEXTS AND THE CALL STACK
+
+1. 执行的具体步骤
+   1. 创造一个 global execution of context for 执行非调用函数的代码和接收函数声明(Exactly one global execution context (EC))
+   2. Execution context: Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.
+   3. One execution context per function: For each function call, a new execution context is created,**all together make the call stack**
+   4. 调用栈：每个执行上下文堆叠在一起，为了追踪我们在程序执行中所处的位置，执行完就弹出（"Place" where execution contexts get stacked on top of each other, to keep track of where we are in the execution）
+   5. 代码在调用栈中的执行上下文中运行
+2.
 
 ## js 介绍
 

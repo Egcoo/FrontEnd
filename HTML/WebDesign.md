@@ -210,3 +210,15 @@
 ### The website personalities- framework
 
 ### Steal like a artist.
+
+### Elements and Components
+
+1. elements -> components -> layouts -> Webpages
+   1. Use **common elements** and components to convey yourwebsite's information
+   2. Combine components into layouts using common layout patterns
+   3. Assemble different **layout areas** into a complete, final pagee
+2. elements、components 、pattern
+   1. Elements: Text、Buttons,Images,Input elements,Tags
+   2. components: Breadcrumbs（导航栏）,Pagination, Carousel（旋转展示）,Alert and status bars,Statistics（数据展示）,Gallery,Feature box（功能框）,Preview and profile cards（预览和资料卡）,Accordion(FAQ 组件),Tabs（选项卡，用于不同数据切换）,Customer testimonials（客户推荐）,Customer logos（客户 logo）,Featured-in logos（社会证明 logo）,Steps（步骤组件）,Forms（表格填写，登录注册）,Tables（表格数据展示）, ,Pricing tables（价格展示）,Modal windows（模型窗口）
+   3. SECTION COMPONENTS: Navigation,Hero section,Footer,Call-to-action section,Feature row
+   4. LAYOUT PATTERNS ：Row of boxes or cards ,Grid of boxes or cards ,Z-pattern ,F-Pattern ,Single-column ,Sidebar ,Multi-column/magazine ,Asymmetry/Experimental
