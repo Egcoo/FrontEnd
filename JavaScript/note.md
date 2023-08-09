@@ -95,13 +95,65 @@ Consolas
 
 ### EXECUTION CONTEXTS AND THE CALL STACK
 
-1. 执行的具体步骤
-   1. 创造一个 global execution of context for 执行非调用函数的代码和接收函数声明(Exactly one global execution context (EC))
-   2. Execution context: Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.
-   3. One execution context per function: For each function call, a new execution context is created,**all together make the call stack**
-   4. 调用栈：每个执行上下文堆叠在一起，为了追踪我们在程序执行中所处的位置，执行完就弹出（"Place" where execution contexts get stacked on top of each other, to keep track of where we are in the execution）
-   5. 代码在调用栈中的执行上下文中运行
-2.
+执行的具体步骤
+
+1.  创造一个 global execution of context for 执行非调用函数的代码和接收函数声明(Exactly one global execution context (EC))
+2.  Execution context: Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.
+3.  Execution context = vairable environment + Scope chain + this keyword
+4.  One execution context per function: For each function call, a new execution context is created,**all together make the call stack**
+5.  调用栈：每个执行上下文堆叠在一起，为了追踪我们在程序执行中所处的位置，执行完就弹出（"Place" where execution contexts get stacked on top of each other, to keep track of where we are in the execution）
+6.  代码在调用栈中的执行上下文中运行
+
+### SCOPE AND THE SCOPE CHAIN
+
+1. Scoping: How our program's variables are organized and accessed.
+2. Scope: Space or environment in which a certain variable is declared (variable environment in case of functions). There is **global** scope, **function** socope, and **block** scope;
+3. Scope of a variable: Region of our code where a certain variable can be accessed.
+4. Three Type of scope
+   1. global scope
+   2. function scope
+   3. block scope : only let and const are block scope
+5. call stack, execution context, variable environment , scope
+   1. 全局变量（global scope）中的可用变量就是存储在全局执行上下文(global execution context)的那些变量环境(variable environment)
+   2. Every scope always has access to all the variables from all its outer scopes. This is the scope chain
+   3. scope chain 只和代码被写在了哪里有关，和代码是否被调用，调用顺序无关
+   4. 当一个变量不在当前范围，引擎就会想上寻找直到找到变量在哪里。
+   5. The scope chain in a certain scope is equal to adding together all the variable environments of the all parent scopes;（某作用域内的作用域链等于所有父作用域的所有变量环境的总和;）
+
+### VARIABLE ENVIRONMENT: HOISTING AND THE TDZ 提升机制
+
+1. Hoisting: Makes some types of variables accessible/usable in thhe code before they are actually declared. "Variables lifted to the top of their scope".(在你声明之前先使用)
+2. Before execution, code is scanned for variable declarations, and for each variable, a new property is created in the variable environment object.(在执行之前，扫描代码以查找变量声明，并且在变量环境对象中为每个变量创建一个新属性。在全局对象上创建一个属性)
+3. Why TDZ : Makes it easier to avoid and catch errors: accessing variables before declaration is bad practice and should be avoided; 2） 让 const 常量真正起作用，因为我们不能重新分配 const
+
+### This key word
+
+1. this is **NOT** static. It depends on how the function is called, and iits value is only assigned when the function is actually called.
+2. this 的四种使用方法
+   1. Method ：this <Object that is calling the method> **this 总是指向调用该方法或者属性的对象**
+   2. Simple function call this = undefined Arrow functions 函数中直接调用就是 undefined
+   3. this = <this of surrounding function (lexical this) > ， **arrow functions 调用 this 就是 window，因为 arrow function 没有自己的 this，只能调用父函数的 function**
+   4. Event listener this = <DOM element that the handler is attached to>
+3. this does NOT point to the function itself, and also NOT tthe its variable environment!(this 不是指向函数本身，也不是它的变量环境!)
+
+### regular function vs Arrow Function
+
+1. 当我们试图访问一个不存在的属性，不会报错，只会有 undefined。
+2. arguement 这个关键字只存在于常规函数之中（比较过时的方法）
+
+### PRIMITIVES VS. OBJECTS (PRIMITIVE VS. REFERENCE TYPES)
+
+1. 七种基本类型：Number, Sting, Boolean, underfined, Null, Symbol, BigInt
+2. 独特的动态类型机制
+3. 原始类型和引用类型在内存中的存储方式是相当不同的。基本类型存储在执行上下文中（但因为执行上下文在调用栈内，也可以说是在栈中），引用类型存储在堆中。
+4. const 不改变只适用于原始类型
+5. 引用类型：当你复制一个对象时，你只是在创建一个变量指向新对象。
+
+### js
+
+1. Prototypal Inheritance： Object Oriented Programming (OOP) With JavaScript
+2. Event Loop Asynchronous JavaScript: Promises, Async/Await and AJAX
+3. How the DOM Really Works Advanced DOM and Events
 
 ## js 介绍
 
@@ -109,26 +161,20 @@ Consolas
 2. 值类型——数据类型：不可改变的原始值(栈数据)、引用值(堆数据)，唯一的不同是赋值形式的不同。
 3. 真想删除东西就需要二次覆盖。
 
-## 7 种基本类型
-
-1. Number, Sting, Boolean, underfined, Null, Symbol, BigInt
-2. 独特的动态类型机制
-3. 没声明就用，会让 js 在全局对象上创建一个属性
-
-## 逻辑运算符
+### 逻辑运算符
 
 1. undefined, null, NaN, " ", 0, false ===> false
 2. 先看第一表达式转换成布尔值得结果,如果结果为真,那么它会看第二个表达式转换为布尔值得结果,然后如果只有两个表达式的话,只看看到第二个表达式,就可以返回该表达式的值了。
 3. 如果是多个表达式的话，只要是真就一直往后走，一旦碰到假就返回假的位置。
 
-## typeof
+### typeof
 
 1. number string boolean object undefined function
 2. typeof(typeof(undefined)) 返回 string 值, 因为内层返回 undefined 是字符类型。
 3. 数组、null 放进去返回值也是 object
 4. typeof(NaN) -> number
 
-## 显示类型转换
+### 显示类型转换
 
 2. Number(mix), parseInt(string , radix), parseFloat(string), toString(radix), String(mix), Boolean()
 3. Number() 会想尽一切办法把括号里的内容转化为数，null -> 0, true -> 1, false -> 0, Number(undefined) 结果是 NaN， 普通字符串结果 NaN
@@ -138,7 +184,7 @@ Consolas
 7. Boolean() : 空串""是 false，
 8. toString(radix): toString 作为一个函数，undefined 和 null 都不能用 tostring，如果 radix 不为空，则以当前进制为基底转化成目标进制(radix)。
 
-## 隐式类型转换
+### 隐式类型转换
 
 1. isNaN() : 先把括号里的数字放到 Number()里去转换，转化以后和 NaN 比对，如果相等则为 true **NaN != NaN**, 并且 NaN 不等于任何东西。
 2. ++/-- +/- : 先把括号里的数字放到 Number() 里去转换
@@ -156,18 +202,18 @@ Consolas
 7. == != ：调用 Boolean
 8. 不发生类型转换： === !== 强制比对
 
-## 函数、初始作用域
+### 函数、初始作用域
 
 1. 参数才决定了一个函数真正神奇的地方，将规则抽象
 2. 形参和实参都是随便传，会有一个 arguements 数组来存储实参。
 3. arguements 数组和 形参存在一个映射关系。相等的时候才映射。
 
-## 递归
+### 递归
 
 1. 找规律
 2. 找出口
 
-## 预编译
+### 预编译
 
 1. js 特点：单线程 + 解释型语言
 2. js 执行三部曲：语法分析、预编译、解释执行
