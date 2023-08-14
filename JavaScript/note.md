@@ -149,23 +149,71 @@ Consolas
 4. const 不改变只适用于原始类型
 5. 引用类型：当你复制一个对象时，你只是在创建一个变量指向新对象。
 
+## Data structures
+
+### spread operator
+
+1. 扩展运算符适用于所有的可迭代对象。(Ilerables: arrays, strings, maps, sets, NOT object)
+2. 扩展运算符的主要用途就是解包一个数组构建新数组和将多个值传递给函数，通常当实参用，分发参数
+3. Rest pattern and parameters 用作形参收集参数，或者用逗号分隔的变量名。
+
+### 逻辑运算符（用于替代 if 语句）
+
+1. undefined, null, NaN, " ", 0, false ===> false
+2. || 先看第一表达式转换成布尔值得结果,如果结果为真,那么它会看第二个表达式转换为布尔值得结果,然后如果只有两个表达式的话,只看看到第二个表达式,就可以返回该表达式的值了。
+3. && 如果是多个表达式的话，只要是真就一直往后走，一旦碰到假就返回假的位置。
+4. Nullish: null and undefined (NOT 0 or '')
+5. 逻辑赋值运算符(ES2021 引入)：||= 和 &&=
+6. 链接运算符 ?., 只有?.前面的成立，才会往后走，经常与无效合并运算符(??)一起使用
+
+### LOOPING OBJECTS: OBJECT KEYS. VALUES. AND ENTRIES
+
+1. 数组中使用 entries 方法 和对对象使用是相当不同的。
+
+```javascript
+/* Demo of Object.entries() */
+const object1 = {
+  a: "somestring",
+  b: 42,
+};
+
+for (let [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+// output:
+// "a: somestring"
+// "b: 42"
+/* Demo of Array entries()  */
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+for (let [key, value] of fruits.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+// output:
+// 0: Banana
+// 1: Orange
+// 2: Apple
+// 3: Mango
+```
+
+### sets and maps
+
+1. sets 无顺序，不重复
+2. Map：set(),get(), 对对象使用两个方法需要提炼
+
 ### js
 
 1. Prototypal Inheritance： Object Oriented Programming (OOP) With JavaScript
 2. Event Loop Asynchronous JavaScript: Promises, Async/Await and AJAX
-3. How the DOM Really Works Advanced DOM and Events
+3. How the DOM Really Works fAdvanced DOM and Events
 
 ## js 介绍
 
 1. 由值决定类型。
 2. 值类型——数据类型：不可改变的原始值(栈数据)、引用值(堆数据)，唯一的不同是赋值形式的不同。
 3. 真想删除东西就需要二次覆盖。
-
-### 逻辑运算符
-
-1. undefined, null, NaN, " ", 0, false ===> false
-2. 先看第一表达式转换成布尔值得结果,如果结果为真,那么它会看第二个表达式转换为布尔值得结果,然后如果只有两个表达式的话,只看看到第二个表达式,就可以返回该表达式的值了。
-3. 如果是多个表达式的话，只要是真就一直往后走，一旦碰到假就返回假的位置。
 
 ### typeof
 
