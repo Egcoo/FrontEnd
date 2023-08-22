@@ -222,3 +222,77 @@
    2. components: Breadcrumbs（导航栏）,Pagination, Carousel（旋转展示）,Alert and status bars,Statistics（数据展示）,Gallery,Feature box（功能框）,Preview and profile cards（预览和资料卡）,Accordion(FAQ 组件),Tabs（选项卡，用于不同数据切换）,Customer testimonials（客户推荐）,Customer logos（客户 logo）,Featured-in logos（社会证明 logo）,Steps（步骤组件）,Forms（表格填写，登录注册）,Tables（表格数据展示）, ,Pricing tables（价格展示）,Modal windows（模型窗口）
    3. SECTION COMPONENTS: Navigation,Hero section,Footer,Call-to-action section,Feature row
    4. LAYOUT PATTERNS ：Row of boxes or cards ,Grid of boxes or cards ,Z-pattern ,F-Pattern ,Single-column ,Sidebar ,Multi-column/magazine ,Asymmetry/Experimental
+
+### THE 7 STEPS TO A GREAT WEBSITE
+
+1. Define the project
+   1. Define **WHO the website is for.** Is it for yourself? For a client of your agency or your freelancing business?
+   2. Define **WHAT the website is for.** In other words, define businessand user goals of your website project ?(See lecture on UX) (一般提供信息，买东西，娱乐是三种主要的手段)
+   3. Define a **target audience** Be really specific if possible and if it makes sense for your website (this can come from your client) （Example: "Women, 20 to 40 years old, living in Europe, earning over 2000€/month, with a passion for dogs" ）
+2. PLAN THE PROJECT
+   1. Plan and gather **website content**: copy (text), images, videos etc.
+   2. Content is usually **provided by the client**, but you also can help them produce and find some content (simply finding free innagesis easiest, but if they want copy, charge them extra)
+   3. For bigger sites, plan out the sitemap: what pages the site needs,and how they are related to one another (content hierarchy) （思考那些网页是需要的，而且它们之间如何连接）
+   4. Based on the content, plan what sections each page needs in order to convey the content's message. andin which order(先内容，后设计而不是先设计，设计完了用内容填充)
+3. SKETCH LAYOUT AND COMPONENT IDEAS
+   1. Think about what **components** you need, and how youcan use them in layout patterns(Get inspiration in web design section)
+   2. Get ideas out of your head: sketch them with pen and paper or with some design software (e.g. Figma)
+   3. This is an iterative process: experiment with different components and layouts, until you arrive at a first good solution
+   4. You don't need to sketch everything, and don't make it perfect At some point, you're ready to jump into HTML and CSSS
+4. DESIGN AND BUILD WEBSITE
+
+   1. Use decisions, content and sketches from Steps 1, 2 and3 to design and build the website with HTML and CSS ("designing inthe browser")
+   2. You already have the layout and components that yopu selected in Step 3. In this step, you need to design the actual visual styles
+   3. Create the design based on selected **website personality** the design guidelines I showed you, and inspiration See web design section)
+   4. Use the client's branding (it if exists already) for design decisions whenever possible: colors, **typography, icons,** etc.
+
+5. TEST AND OPTIMIZE
+
+   1. Make sure website works well in **all major browsers** (Chrome Firefox, Safari, Edge, maybe even old IE)
+   2. Test the website on **actual mobile devices**, not just in DevTools
+   3. Optimize all images, in terms of dimensions and file size (see lecture on images)
+   4. Fix simple **accessibility** problems (e.g. color contrast issuees)
+   5. Run the Lighthouse performance test in Chrome DevToolss and try to fix reported issues
+   6. Think about **Search Engine Optimization (SEO)**
+
+6. LAUNCH THE MASTERPIECE
+   1. Once all work is done, everything is perfect, and you got approval from your client (or yourself), **it's time to share your masterpiece with the world!**
+   2. Upload your website files to a hosting platform. There are countless platform, we will use one with a free plan (Netlify)
+   3. Choose and buy a great domain name, one that represents the brand well, is memorable and easy to write
+7. MAINTAIN AND KEEP UPDATING WEBSITE
+   1. Launching is not the end...
+   2. Keep the website content **updated over time.** If you're working with a client, you can create a monthly maintenance contract(recurring revenue)
+   3. Install **analytics software** (e.g. Google Analytics or Fathom) to get statistics about website users. This may inform future chaanges in the site structure and content.
+   4. A blog that is updated regularly is a good way to keep users coming back, and is also good for SEO.
+
+### RESPONSIVE DESIGN PRINCIPLES(响应式设计)
+
+Design technique to make a webpage adjust its layout arnd visual style to **any possible screen size** (window or viewport size)
+In practice, this means that responsive design makes websitesusable on all devices, such as **desktop computers, tablets, and mobile phones.**
+It's a set of practices, **not a separate technology.** It's all just CSS!
+
+1. Fluid Layouts
+   1. To allow webpage to adapt to the **current viewport width** (or even height)
+   2. Use % (or vh / vw) unit instead of px for elements that **should adapt to viewport (usually layout)**
+   3. Use max-width instead of width
+2. Responsive units
+   1. Use rem unit instead of px for most lengths
+   2. To make it easy to **scale the entire layout down** (or up) automatically
+   3. **Helpful trick**: setting 1rem to 10px for easy calculations
+3. Flexible images
+   1. By default, images **don't scale automatically** as we change the viewport, so we need to fix that
+   2. Always use % for image dimensions, together with the max-width property
+4. Media Queries
+   1. Bring responsive sites to life!
+   2. To change CSS styles on **certain viewport widths** (called breakpoints)
+
+DESKTOP-FIRST VS. MOBILE-FIRST DEVELOPMENT
+
+1. Start writing CSS for the desktop: **large screen**
+2. Then, media queries **shrink design** to smaller screens.
+
+MOBILE-FIRST
+
+1. Start writing CSS for mobile devices: small screen
+2. Then, media queries **expand design** to a large screen
+3. Forces us to reduce websites and apps to the **absolute essentials.**
