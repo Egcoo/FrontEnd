@@ -296,3 +296,8 @@ MOBILE-FIRST
 1. Start writing CSS for mobile devices: small screen
 2. Then, media queries **expand design** to a large screen
 3. Forces us to reduce websites and apps to the **absolute essentials.**
+
+响应式设计关注的点:
+
+1. 设备的宽度和断点
+2. 设计中断的地方

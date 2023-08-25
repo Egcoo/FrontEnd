@@ -1,14 +1,14 @@
 /**************************/
-/* Header */
+/* HEADER */
 /**************************/
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   background-color: #fdf2e9;
 
-  /* we want headr to be sticky later */
+  /* Because we want header to be sticky later */
   height: 9.6rem;
   padding: 0 4.8rem;
   position: relative;
@@ -19,7 +19,7 @@
 }
 
 /**************************/
-/* Navigation */
+/* NAVIGATION */
 /**************************/
 
 .main-nav-list {
@@ -35,8 +35,8 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  font-style: 1.8rem;
-  transition: all 0.2s;
+  font-size: 1.8rem;
+  transition: all 0.3s;
 }
 
 .main-nav-link:hover,
@@ -46,7 +46,7 @@
 
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
-  padding: 1.6em 3.2em;
+  padding: 1.2rem 2.4rem;
   border-radius: 9px;
   color: #fff;
   background-color: #e67e22;
@@ -57,12 +57,12 @@
   background-color: #cf711f;
 }
 
-/* Mobile */
-
+/* MOBILE */
 .btn-mobile-nav {
   border: none;
   background: none;
   cursor: pointer;
+
   display: none;
 }
 
@@ -76,8 +76,26 @@
   display: none;
 }
 
+/* Sticky Navigation */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
 /**************************/
-/* Hero Section */
+/* HERO SECTION */
 /**************************/
 
 .section-hero {
@@ -139,7 +157,7 @@
 }
 
 /**************************/
-/* Featured in Section */
+/* FEATURED IN SECTION */
 /**************************/
 
 .section-featured {
@@ -166,13 +184,13 @@
   filter: brightness(0);
   opacity: 50%;
 }
+
 /**************************/
-/* How it works Section */
+/* HOW IT WORKS SECTION */
 /**************************/
 
 .section-how {
   padding: 9.6rem 0;
-  /* background-color: #fff; */
 }
 
 .step-number {
@@ -189,6 +207,7 @@
 
 .step-img-box {
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,29 +222,33 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
 }
 
 .step-img-box::before {
   width: 60%;
+  /* height: 60%; */
+
   /* 60% of parent's width */
   padding-bottom: 60%;
+
   background-color: #fdf2e9;
+  z-index: -2;
 }
 
 .step-img-box::after {
   width: 45%;
-  padding-bottom: 50%;
+  padding-bottom: 45%;
   background-color: #fae5d3;
   z-index: -1;
 }
 
 .step-img {
   width: 35%;
+  /* z-index: 10; */
 }
 
 /**************************/
-/* Meals Section */
+/* MEALS SECTION */
 /**************************/
 
 .section-meals {
@@ -278,7 +301,7 @@
   font-size: 2.4rem;
   color: #333;
   font-weight: 600;
-  margin-bottom: 4.8rem;
+  margin-bottom: 3.2rem;
 }
 
 .meal-attributes {
@@ -311,7 +334,7 @@
 }
 
 /**************************/
-/* Testimonial Section */
+/* TESTIMONIALS SECTION */
 /**************************/
 
 .section-testimonials {
@@ -356,14 +379,13 @@
   padding: 1.6rem;
 }
 
-/* .gallery-item {
+.gallery-item {
   overflow: hidden;
-} */
+}
 
 .gallery-item img {
   display: block;
   width: 100%;
-  border-radius: 9px;
   transition: all 0.4s;
 }
 
@@ -372,7 +394,7 @@
 }
 
 /**************************/
-/* Pricing Section */
+/* MEALS SECTION */
 /**************************/
 
 .section-pricing {
@@ -381,6 +403,7 @@
 
 .pricing-plan {
   border-radius: 11px;
+
   width: 75%;
 }
 
@@ -402,12 +425,13 @@
   position: absolute;
   top: 6%;
   right: -18%;
+
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
+  color: #333;
   background-color: #ffd43b;
   padding: 0.8rem 8rem;
-  color: #333;
   transform: rotate(45deg);
 }
 
@@ -444,7 +468,7 @@
   color: #6f6f6f;
 }
 
-.plan-sign-up {
+.plan-sing-up {
   text-align: center;
   margin-top: 4.8rem;
 }
@@ -459,10 +483,10 @@
   color: #e67e22;
   height: 3.2rem;
   width: 3.2rem;
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
   padding: 1.6rem;
   border-radius: 50%;
-  margin-bottom: 3.2rem;
-  background-color: #fdf2e9;
 }
 
 .feature-title {
@@ -478,25 +502,27 @@
 }
 
 /**************************/
-/* Meals Section */
+/* CTA SECTION */
 /**************************/
 
 .section-cta {
-  padding: 4.8rem 0 9.6rem 0;
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / left */
+  padding: 4.8rem 0 12.8rem;
 }
 
 .cta {
   display: grid;
+  /* 2/3 = 66.6% + 1/3 = 33.3% */
   grid-template-columns: 2fr 1fr;
   /* background-color: #e67e22; */
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
   border-radius: 11px;
+
   background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
-
   overflow: hidden;
-
-  /* temp */
-  /* height: 50rem; */
 }
 
 .cta-text-box {
@@ -505,6 +531,7 @@
 }
 
 .cta .heading-secondary {
+  /* color: #45260a; */
   color: inherit;
   margin-bottom: 3.2rem;
 }
@@ -521,7 +548,7 @@
       rgba(235, 151, 78, 0.35),
       rgba(230, 125, 34, 0.35)
     ),
-    url(../img/eating.jpg);
+    url("../img/eating.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -563,7 +590,7 @@
 }
 
 /**************************/
-/* Footer Section */
+/* FOOTER */
 /**************************/
 
 .footer {
@@ -613,6 +640,10 @@
   font-style: normal;
   font-size: 1.6rem;
   line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
 }
 
 .footer-nav {
