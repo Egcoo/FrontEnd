@@ -96,6 +96,91 @@
 1. [讲 border-shadow 的文章](https://zhuanlan.zhihu.com/p/587750815)
 2.
 
+---
+
+## SEO
+
+### Introduction
+
+What is SEO ?
+SEO 代表搜索引擎优化，这是优化通过搜索引擎的自然搜索结果发现的内容的过程
+Why is it Important？
+三件事情使得 SEO 成为最佳流量来源
+
+1. 与付费广告不同，搜索流量是免费的。
+2. 一旦你的排名很高，给你的流量通常会持续很长时间。而社交媒体带来的热点通常也会很快消失。
+3. 你有机会接触到大量受众。
+
+How google works?
+
+1. Crawling and indexation. 先爬取所有的网页数据，然后将所有的数据带回到 google 的服务器，然后添加到“搜索索引”中。
+2. Google ranking algorithm. 1) 反向链接，也就是知名网站中的超链接 2）查询意图，返回最相关的结果 3）内容深度
+
+### Moudle #1: Keyword research
+
+What are Keywords ？
+
+1. 关键词为搜索引擎的优化奠定了整个基础。
+
+How to Choose Them？
+
+1. 检查你的关键字是否有搜索需求。
+2. 主题的流量潜力。排名前 10 的网站，几乎都有 1000 个关键词左右。仅仅根据指标选择关键字并不是一个好主意。
+3. 评估关键字和主题的商业潜力。（搜索量、流量潜力、商业潜力）
+4. 检查是否匹配搜索者的意图。
+5. 为你设立的关键字排名。
+
+如何分析搜索者意图？
+
+1. Content type （Blog posts,videos, product pages, category pages, landing pages）
+2. Content Format
+3. content angle, It's basically your "hook" as to why someone should click and visit your page.
+
+如何为您的网站查找关键字?
+
+1. Generate keyword ideas
+
+   1. Keyword Research Tools 1) Show you information on keywords 2)Search volume 3)Keyword difficulty scores 4) Other SEO metrics
+   2. Informational:how、what、who、where、why、guide、tutorial、resource、help、ideas、tips、learn、examples。
+   3. Navigational：brand names、name of a product、name of a service
+   4. Commercial investigation：best、top、pricing、review、Attribute of a product、(size, color)、comparison
+   5. Transactional：buy、coupon、order、[city] type of store(local)、purchase、cheap、price、pricing
+   6. The best way to find these keywords is to look at pages that drive the most search traffic to your competitors' sites.
+
+2. Validate whether those keywords are worth going after
+
+如何了解排名的难度？
+
+1. 先要了解你的对手是谁。
+   1. Search intent
+   2. Metrics of the top ranking pages and websites
+   3. Topical authority of the top ranking websites
+2. four question to understand your web rank
+   1. Do some of the top-ranking pages fail to closely match search intent?
+   2. Can I get more QUALITY backlinks than the top ranking pages?
+   3. Is my website in a similar DR range OR higher than the top ranking websites?
+   4. Is my website equally or MORE topically authoritative than the top ranking websites?
+
+### Moudle #2: On-page SEO
+
+搜索引擎优化不是什么？
+
+1. 不是填充完全匹配的关键字。
+2. 不是在页面上使用特定的次数。
+3. 不是满足最低字数要求。
+
+搜索引擎优化是什么？
+
+1. 优化网页以在搜索引擎中排名更高的做法。
+2. 满足人们所希望看到的内容
+3. 需要确定更”有形“的项目，例如标题、副标题、内部链接、可读性、内容本身
+
+### Moudle #3: Link Building
+
+### Moudle #4: The basics of technical SEO
+
+---
+
 ## 语义化
 
 ### 什么是语义化

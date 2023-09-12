@@ -88,7 +88,7 @@ Consolas
 ### THE JAVASCRIPT ENGINE AND RUNTIME
 
 1. 任何一个 js 引擎 = 调用栈（代码实际执行） + 堆（存储程序需要的对象）
-2. 现代 js 引擎混合使用编译和解释 (先通过编译整个编译成机器码，后执行)
+2. 即时编译：现代 js 引擎混合使用编译和解释 (先通过编译整个编译成机器码，后执行)
 3. 现代引擎的原理：开始编译的结果就是产生一个未优化的机器码，以至于可以快速执行，然后在后台代码继续优化，并且在已经运行的程序执行期间重新编译，并且这个过程会多次持续，直至未优化的代码彻底变成优化后的代码（发生在引擎内部的我们无法通过代码访问的线程）
 4. js runtime: js Engine + web API(为 Engine 提供功能，但不是一部分) + Callback queue（比如事件处理函数，调用过后重新放入回调队列，**当调用栈为空时，回调函数被传回栈**）
 5. Node.js js runtime : js Engine + C++ Bindings & Thread Pool + callback queue
@@ -97,8 +97,8 @@ Consolas
 
 执行的具体步骤
 
-1.  创造一个 global execution of context for 执行非调用函数的代码和接收函数声明(Exactly one global execution context (EC))
-2.  Execution context: Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.
+1.  创造一个 global execution of context (for top level code, 这里的 top level code 不在任何函数中) 执行非调用函数的代码和接收函数声明(Exactly one global execution context (EC))
+2.  Execution context: Environment in which a piece of JavaScript is executed. Stores all the necessary information for some code to be executed.（披萨盒子是环境，披萨是 code，吃披萨工具和收据是必要的信息）
 3.  Execution context = vairable environment + Scope chain + this keyword
 4.  One execution context per function: For each function call, a new execution context is created,**all together make the call stack**
 5.  调用栈：每个执行上下文堆叠在一起，为了追踪我们在程序执行中所处的位置，执行完就弹出（"Place" where execution contexts get stacked on top of each other, to keep track of where we are in the execution）
@@ -112,7 +112,7 @@ Consolas
 4. Three Type of scope
    1. global scope
    2. function scope
-   3. block scope : only let and const are block scope
+   3. block scope : only let and const are block scope (**Functions are also block scoped**(only in strict mode))
 5. call stack, execution context, variable environment , scope
    1. 全局变量（global scope）中的可用变量就是存储在全局执行上下文(global execution context)的那些变量环境(variable environment)
    2. Every scope always has access to all the variables from all its outer scopes. This is the scope chain
@@ -122,19 +122,25 @@ Consolas
 
 ### VARIABLE ENVIRONMENT: HOISTING AND THE TDZ 提升机制
 
-1. Hoisting: Makes some types of variables accessible/usable in thhe code before they are actually declared. "Variables lifted to the top of their scope".(在你声明之前先使用)
+1. Hoisting: Makes some types of variables accessible/usable in the code before they are actually declared. "Variables lifted to the top of their scope".(在你声明之前先使用)
+   1. 函数声明：Hoisted ✅; Initial Value: Actual function; Scope: Block
+   2. var variables: Hoisted ✅; Initial Value: underfined ; Scope: Function(var 在全局变量上创建)
+   3. Let and const variables: Hoisted ❌; <uninitialized>,TDZ; Scope: Block
+   4. function expressions and arrows: Depends if using var or let/const
 2. Before execution, code is scanned for variable declarations, and for each variable, a new property is created in the variable environment object.(在执行之前，扫描代码以查找变量声明，并且在变量环境对象中为每个变量创建一个新属性。在全局对象上创建一个属性)
 3. Why TDZ : Makes it easier to avoid and catch errors: accessing variables before declaration is bad practice and should be avoided; 2） 让 const 常量真正起作用，因为我们不能重新分配 const
 
 ### This key word
 
-1. this is **NOT** static. It depends on how the function is called, and iits value is only assigned when the function is actually called.
-2. this 的四种使用方法
+1. this keyword/variable: Special variable that is created for everyexecution context (every function) Takes the value of (points to) the "owner" of the function in which the this keyword is used.
+2. this is **NOT** static. It depends on how the function is called, and its value is only assigned when the function is actually called.
+3. this 的四种使用方法
    1. Method ：this <Object that is calling the method> **this 总是指向调用该方法或者属性的对象**
    2. Simple function call this = undefined Arrow functions 函数中直接调用就是 undefined
    3. this = <this of surrounding function (lexical this) > ， **arrow functions 调用 this 就是 window，因为 arrow function 没有自己的 this，只能调用父函数的 function**
    4. Event listener this = <DOM element that the handler is attached to>
-3. this does NOT point to the function itself, and also NOT tthe its variable environment!(this 不是指向函数本身，也不是它的变量环境!)
+4. this does NOT point to the function itself, and also NOT tthe its variable environment!(this 不是指向函数本身，也不是它的变量环境!)
+5. arguement 关键字：只有函数表达式里存在 arguement 关键词，箭头表达式里没有。
 
 ### regular function vs Arrow Function
 
@@ -153,16 +159,16 @@ Consolas
 
 ### spread operator
 
-1. 扩展运算符适用于所有的可迭代对象。(Ilerables: arrays, strings, maps, sets, NOT object)
+1. 扩展运算符适用于所有的可迭代对象。(Ilerables: arrays, strings, maps, sets, NOT object) [...xxx]
 2. 扩展运算符的主要用途就是解包一个数组构建新数组和将多个值传递给函数，通常当实参用，分发参数
-3. Rest pattern and parameters 用作形参收集参数，或者用逗号分隔的变量名。
+3. Rest pattern and parameters 用作形参收集参数，或者用逗号分隔的变量名,常用在等号左边。
 
 ### 逻辑运算符（用于替代 if 语句）
 
 1. undefined, null, NaN, " ", 0, false ===> false
-2. || 先看第一表达式转换成布尔值得结果,如果结果为真,那么它会看第二个表达式转换为布尔值得结果,然后如果只有两个表达式的话,只看看到第二个表达式,就可以返回该表达式的值了。
+2. || 先看第一表达式转换成布尔值得结果,如果结果为真,那么它会看第二个表达式转换为布尔值得结果,然后如果只有两个表达式的话,只看看到第二个表达式,就可以返回该表达式的值了，一碰到真就返回真的表达式，全假就返回最后一个值。
 3. && 如果是多个表达式的话，只要是真就一直往后走，一旦碰到假就返回假的位置。
-4. Nullish: null and undefined (NOT 0 or '')
+4. Nullish(??): null and undefined (NOT 0 or '')
 5. 逻辑赋值运算符(ES2021 引入)：||= 和 &&=
 6. 链接运算符 ?., 只有?.前面的成立，才会往后走，经常与无效合并运算符(??)一起使用
 
@@ -200,8 +206,55 @@ for (let [key, value] of fruits.entries()) {
 
 ### sets and maps
 
-1. sets 无顺序，不重复
-2. Map：set(),get(), 对对象使用两个方法需要提炼
+1. array: pop 删除、
+2. sets 无顺序，不重复
+3. Map：set(),get(), 对对象使用两个方法需要提炼
+
+### Which data structure to use?
+
+SOURCES OF DATA
+
+1. **From the program itself**: Data written directly in source code (e.g. status messages)
+2. **From the UI**: Data input from the user or data written in DOM (e.g tassks in todo app)
+3. **From external sources**: Data fetched for example from web API (e.g.recipe objects) ,data from web APIS usually comes in a special data format.
+
+Data structure, javascript only has four built-in data structure
+
+1. Simple list: Arrays or Sets.
+2. key/value pairs : Object or maps.
+
+Arrays:
+
+1. Use when you need ordered list of values (might contain duplicates)
+2. Use when you need to manipulate data
+
+Sets:
+
+1. Use when you need to work with unique values
+2. Use when high-performance is really important
+3. Use to remove duplicates from arrays
+
+Objects:
+
+1. More "traditional" key/value store ("abused" objects)
+2. Easier to write and access
+3. values with . and []
+4. Use when you need to include functions (methods)
+5. Use when working with JSON (can convert to map)
+
+Maps:
+
+1. Better performance
+2. Keys can have any data type
+3. Easy to iterate
+4. Easy to compute size
+5. Use when you simply need to map key to values
+6. Use when you need keys that are not strings
+
+### Strings
+
+1. 为什么 string 是原始类型还能有方法？当我们在 string 调用方法的时候，js 自动在幕后把 string 原始类型转化为 string 对象，调用结束以后，js 再转回来
+2.
 
 ### js
 
