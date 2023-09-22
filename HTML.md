@@ -9,17 +9,17 @@
 5. 通用选择器不会被继承, margin 也不是一个可继承的属性, 通常我们只会使用 margin-top 或者 bottom 中的一个来创造垂直空间。
 6. 将盒子模型的 css 代码放到前面，同时避免写太复杂的 css 选择器。
 7. 当你需要一些元素内部的空间，尤其是背景颜色，使用 padding；在元素之外或者多个元素创造空间，使用 margin
-8. block-level boxx vs inline box, 对于行元素宽度和高度的设置对其没有任何影响，padding 和 margin 仅适用于左右，也就是仅对水平起作用
+8. block-level box vs inline box, 对于行元素宽度和高度的设置对其没有任何影响，padding 和 margin 仅适用于左右，也就是仅对水平起作用
 9. inline-block boxex: 内部呈现为块元素，但在外部表现为行元素
    1. inline elements: 无法应用 text-again, ta 是使元素内部的文本居中，inline elements 总共占据的空间只是内容的空间。
 10. 定位：元素默认都是 relative , 如果设置成 absolute，那么这个元素参照的对象默认是整个视口，如果有被设置为 relative 的父元素，那么参照的对象是第一个 relative 的父元素的容器。注意：不要用其来构建复杂的布局，我们一般对单个元素使用绝对定位，比如点赞之类的小东西。
-11. pseudo element 伪元素选择器中最常用的就是 after 和 before ,而且伪元素一般都是 inline box, 想使用的话我们一般将其变成 inline-block boxex 行块盒。
+11. pseudo element 伪元素选择器中最常用的就是 after 和 before ,而且伪元素一般都是 inline box, 想使用的话我们一般将其变成 inline-block box 行块盒。
 
 ## Conflicts between selectors
 
 ## CSS Layout
 
-1. 网站的排列方式和防止方式就是网站上设计的布局
+1. 网站的排列方式和放置方式就是网站上设计的布局
 2. Layout is the way text, images and other content is placed and arranged on a webpage
 3. Layout gives the page a visual structure, into which we place our content
 4. Building a layout: arranging page elements into a visual structure, instead of simply having them placed one after another (normal flow)
@@ -53,6 +53,11 @@
 4. css grid 和 flexbox 是协作关系，一维使用 flexbox， 二维使用 css grid
 
 话语霸权 + 审美殖民
+
+### CSS 创建动画的两种方式
+
+1. transition 属性,opacity: 0 设置为某些属性不可见。
+2. @keyframes 定制动画
 
 ### Web Design Components summarize
 
@@ -297,20 +302,6 @@ schema://host:port/path
    相对路径中:
    ./可以省略
 
-## 图片元素
-
-### img 元素
-
-image 缩写,空元素
-src 属性: source
-alt 属性:当图片资源失效时,将使用该属性的文字替代图片
-
-### 和 a 元素联合使用
-
-### map 元素
-
-map 的子元素 area
-
 ### 和 figure 元素联合使用
 
 指代、定义,通常用于把图片、图片标题、描述包裹起来
@@ -334,18 +325,6 @@ muted:布尔属性,静音播放。
 
 1. 旧版本的浏览器不支持这两个元素
 2. 不同的浏览器支持的音视频格式可能不一致
-
-## 列表元素
-
-### 有序列表
-
-ol: ordered list
-li: list item
-
-### 无序列表 （用最多）
-
-把 ol 改成 ul
-ul: unordered list
 
 ### 定义列表
 
@@ -632,6 +611,8 @@ box:盒子,每个元素在页面中都会生成一个矩形区域(盒子)
 边框颜色:border-color
 
 边框+填充区+内容区= **边框盒 border-box**
+content-box 的 width 不包括 padding 和 border
+border-box 的 width 包括 padding 和 border
 
 4. 外边距 margin
 
