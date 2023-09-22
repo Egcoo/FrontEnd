@@ -138,7 +138,7 @@ Consolas
    1. Method ：this <Object that is calling the method> **this 总是指向调用该方法或者属性的对象**
    2. Simple function call this = undefined Arrow functions 函数中直接调用就是 undefined
    3. this = <this of surrounding function (lexical this) > ， **arrow functions 调用 this 就是 window，因为 arrow function 没有自己的 this，只能调用父函数的 function**
-   4. Event listener this = <DOM element that the handler is attached to>
+   4. Event listener this = <DOM element that the handler is attached to>，this 关键字总是指向元素本身。
 4. this does NOT point to the function itself, and also NOT tthe its variable environment!(this 不是指向函数本身，也不是它的变量环境!)
 5. arguement 关键字：只有函数表达式里存在 arguement 关键词，箭头表达式里没有。
 
@@ -166,7 +166,7 @@ Consolas
 ### 逻辑运算符（用于替代 if 语句）
 
 1. undefined, null, NaN, " ", 0, false ===> false
-2. || 先看第一表达式转换成布尔值得结果,如果结果为真,那么它会看第二个表达式转换为布尔值得结果,然后如果只有两个表达式的话,只看看到第二个表达式,就可以返回该表达式的值了，一碰到真就返回真的表达式，全假就返回最后一个值。
+2. || 一碰到真就返回真的表达式，全假就返回最后一个值。
 3. && 如果是多个表达式的话，只要是真就一直往后走，一旦碰到假就返回假的位置。
 4. Nullish(??): null and undefined (NOT 0 or '')
 5. 逻辑赋值运算符(ES2021 引入)：||= 和 &&=
@@ -203,6 +203,11 @@ for (let [key, value] of fruits.entries()) {
 // 2: Apple
 // 3: Mango
 ```
+
+2. {}中书写代码片段 箭头函数的特点
+   1. 可以省略小括号不写
+   2. 当你的形参只有一个的时候, 可以不写小括号
+   3. 如果你的形参没有或者两个及以上, 必须写小括号
 
 ### sets and maps
 
@@ -254,13 +259,36 @@ Maps:
 ### Strings
 
 1. 为什么 string 是原始类型还能有方法？当我们在 string 调用方法的时候，js 自动在幕后把 string 原始类型转化为 string 对象，调用结束以后，js 再转回来
-2.
+
+### A closer look at function
+
+How passing arguement works?
+只有值传递，没有引用传递，引用类型的数据是存在堆内存中的，而该堆内存的地址是存在栈指针的值中的，参数传递引用类型数据时传递的也是栈指针的值，而不是堆地址的值。
+
+First class vs Higher-Order function (first class function 只是编程语言有或者没有的一个功能)
+
+1. JavaScript treats functions as first-class citizens
+2. This means that functions are simply values
+3. Functions are just another "type" of object
+
+Higher-Order function
+
+1. A function that receives another function as an argument, that returns a new function, or both.
+2. This is only possible because of first-class functions.
+
+有两个好处：1.可以拆分成更多的可重复使用和关联的部分。2.隐藏不必要的细节，允许我们创建抽象。
+
+Call & Apply & bind 函数它们可以指定函数中的 this 指向哪个对象，以及传递参数给函数。
+
+1. Call，，call 函数允许你在一个特定的上下文中调用一个函数。
+2. apply(),**已过时**，apply 函数与 call 函数类似，它也允许你在一个特定的上下文中调用一个函数。不同之处在于，apply 函数需要将参数作为数组传递。
+3. bind() 它不会立即调用函数。相反，它返回一个新函数，该函数将绑定到指定的上下文，当该函数被调用时，它将以指定的上下文运行。
 
 ### js
 
 1. Prototypal Inheritance： Object Oriented Programming (OOP) With JavaScript
 2. Event Loop Asynchronous JavaScript: Promises, Async/Await and AJAX
-3. How the DOM Really Works fAdvanced DOM and Events
+3. How the DOM Really Works Advanced DOM and Events
 
 ## js 介绍
 
@@ -325,39 +353,3 @@ Maps:
 var a = 10;
 window.a = 10;
 ```
-
-### 预编译步骤：发生在函数执行的前一刻
-
-//函数声明整体提升
-//变量 声明提升
-
-1. 创建 AO 对象
-2. 找形参和变量声明,将变量和形参名作为 AO 属性名,值为 undefined
-3. 将实参值和形参统一
-4. 在函数体里面找函数声明,值赋予函数体
-
-```javascript
-function fn(a) {
-  console.log(a);
-
-  var a = 123;
-
-  console.log(a);
-
-  function a() {}
-
-  console.log(a);
-
-  var b = function () {};
-
-  console.log(b);
-
-  function d() {}
-}
-fn(1);
-```
-
-全局环境预编译只有两步
-
-1. 创建 GO(Global Object) 对象
-2. 在函数体里面找函数声明,值赋予函数体
