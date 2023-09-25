@@ -284,6 +284,22 @@ Call & Apply & bind 函数它们可以指定函数中的 this 指向哪个对象
 2. apply(),**已过时**，apply 函数与 call 函数类似，它也允许你在一个特定的上下文中调用一个函数。不同之处在于，apply 函数需要将参数作为数组传递。
 3. bind() 它不会立即调用函数。相反，它返回一个新函数，该函数将绑定到指定的上下文，当该函数被调用时，它将以指定的上下文运行。
 
+Immediately Invoked Function Expressions.
+
+1. 仅仅用于单次执行，用完就没了
+
+Clousure
+
+1. 闭包 A closure is the closed-over **variable environment** of the eexecution context **in which a function was created**, even after that execution context is gone;
+2. A closure gives a function access to all the variables **of its parernt function**, even **after** that parent function has returned. The function keeps a **reference** to its outer scope, which **preserves** thhe scope chain throughout time.
+3. A closure makes sure that a function doesn't loose connectionto **variables that existed at the function's birth place;**（像是一个离开家乡的人并不会失去和他的家乡的联系。）
+4. A closure is like a backpack that a function carries around whenrever it goes. This backpack has all the **variables that were present in the environment where the function was created**
+
+5. A function has access to the variable environment (VE) of theexecution context in which it was created。任何函数总是可以访问变量环境创建函数的执行上下文，即使创建它的那个变量环境已经消失。
+6. Closure: VE attached to the function, exactly as it was at the ttime and place the function was created.闭包就是依附到函数上的变量环境，和函数创建的时间地点完全相同。
+7. 由于闭包，函数不会失去和函数创建所在地的变量的链接。
+8. We do **NOT** have to manually create closures, this is a JavaScript feature that happens automatically. We can't even access closed-over variables explicitly. A closure is **NOT** a tangible JavaScript object
+
 ### js
 
 1. Prototypal Inheritance： Object Oriented Programming (OOP) With JavaScript
