@@ -70,6 +70,10 @@
 
 ### Implicit Conversion
 
+1. +"string" ，可以隐式转换 string 为Number类型。
+2. isNaN(), 检查一个值是否不是个数。
+3. isFinite(), 检查一个值是否是数字的最佳实践。
+
 ### Program 5,6,7 summarize
 
 1. 使用清晰和语义化的变量名。使用像 activePlayer 这样的名称而不是 player。
@@ -237,7 +241,7 @@ for (let [key, value] of fruits.entries()) {
 ### Array,Sets and maps
 
 1. array: pop 删除、
-   1. slice(),返回一个数组，截取数组元素，不会改变原本数组，什么参数都不填就是复制原数组。
+   1. slice(),返回一个数组，截取数组元素，不会改变原本数组，什么参数都不填就是复制原数组。（浅拷贝）
    2. split(),根据某个字符分割，会返回一个数组。
    3. splice(),提取数组元素，会改变原本数组, 原有数组会丢失被提取的部分。不过我们通常的用法就是直接删除最后一个元素，什么参数都不放就是复制数组。
    4. reverse(), 返回一个数组，将原数组反转，会改变原数组。
@@ -253,7 +257,7 @@ for (let [key, value] of fruits.entries()) {
 3. Map:set(),get(), 对对象使用两个方法需要提炼
    1. forEach(),高阶函数的三个参数(value，key，map)
 4. data transformation: map,filter,reduce
-   1. map(value,index,array): 返回一个新数组，其中包含对所有原始数组元素应用操作的结果
+   1. map(value,index,array): 返回一个新数组，其中包含对所有原始数组元素应用操作的结果，比如统一加一个或者减去一个数。
    2. filter(value,index,array): 返回一个新的数组，其中包含通过**指定的测试条件**的数组元素
    3. reduce((acc,cur,i,arr),other) : 将所有数组元素浓缩(“缩减”)为一个值
    4. find(),不会返回新数组，而是返回满足条件的第一个元素，用途就是定向搜索。
@@ -353,4 +357,15 @@ Maps:
 6. Closure: VE attached to the function, exactly as it was at the ttime and place the function was created.闭包就是依附到函数上的变量环境，和函数创建的时间地点完全相同。
 7. 由于闭包，函数不会失去和函数创建所在地的变量的链接。
 8. We do **NOT** have to manually create closures, this is a JavaScript feature that happens automatically. We can't even access closed-over variables explicitly. A closure is **NOT** a tangible JavaScript object
+
+### Math and Rounding
+
+1. Math.sqrt(), 平方根
+2. Math.max(a,b,c,d), 返回最大值
+3. Math.min(a,b,c,d), 返回最小值
+4. Math.random(), 返回从(0,1]的一个小数。
+5. Math.round, Math.ceil,四舍五入
+6. Math.floor() 比 Math.trunc() 好的一点在于后者只是简单去除小数点后的部分，而前者会向更小的部分四舍五入。
+7. toFixed() , 括号可以跟参数，小数的四舍五入，返回的是字符串。
+8.  
 
