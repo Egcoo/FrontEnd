@@ -177,6 +177,18 @@
 4. const 不改变只适用于原始类型
 5. 引用类型：当你复制一个对象时，你只是在创建一个变量指向新对象。
 
+
+
+### Math and Rounding
+
+1. Math.sqrt(), 平方根
+2. Math.max(a,b,c,d), 返回最大值
+3. Math.min(a,b,c,d), 返回最小值
+4. Math.random(), 返回从(0,1]的一个小数。
+5. Math.round, Math.ceil,四舍五入
+6. Math.floor() 比 Math.trunc() 好的一点在于后者只是简单去除小数点后的部分，而前者会向更小的部分四舍五入。
+7. toFixed() , 括号可以跟参数，小数的四舍五入，返回的是字符串。
+
 ### Tips
 
 1. typeof(typeof(undefined)) 返回 string 值, 因为内层返回 undefined 是字符类型。
@@ -358,14 +370,43 @@ Maps:
 7. 由于闭包，函数不会失去和函数创建所在地的变量的链接。
 8. We do **NOT** have to manually create closures, this is a JavaScript feature that happens automatically. We can't even access closed-over variables explicitly. A closure is **NOT** a tangible JavaScript object
 
-### Math and Rounding
 
-1. Math.sqrt(), 平方根
-2. Math.max(a,b,c,d), 返回最大值
-3. Math.min(a,b,c,d), 返回最小值
-4. Math.random(), 返回从(0,1]的一个小数。
-5. Math.round, Math.ceil,四舍五入
-6. Math.floor() 比 Math.trunc() 好的一点在于后者只是简单去除小数点后的部分，而前者会向更小的部分四舍五入。
-7. toFixed() , 括号可以跟参数，小数的四舍五入，返回的是字符串。
-8.  
 
+## DOM
+
+### How Dom really works?
+
+1. Allows us to make JavaScript interact with the browser;
+2. We can write JavaScript to create, modify and delete HTML elerments;set styles, classes and attributes; and listen and respond to events
+3. DOM tree is generated from an HTML document, which we can then interact with;
+4. DOM is a very complex API that contains lots of methods and properties to interact with the DOM tree.
+
+
+
+![DOM](img/DOM.png "DOM")
+
+
+
+### Selecting, Creating, and Deleting elements
+
+Selecting
+
+1. document.querySelector(),选择符合条件的第一个元素
+2. document.querySelectorAll(),选择符合条件的所有元素，返回一个Nodelist
+3. document.getElementById(),
+4. document.getElementsByTagName(),返回一个实时更新的HTMLCollection
+5. document.getElementsByClassName(),返回一个实时更新的HTMLCollection
+
+
+
+Creating
+
+1. .insertAdjacentHTML(, ),插入元素
+2. createElement('ElementName'),创建一个元素
+3. 
+
+
+
+Deleting
+
+1. remove()
