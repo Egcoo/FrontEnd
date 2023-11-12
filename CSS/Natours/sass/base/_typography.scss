@@ -4,8 +4,6 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   color: $color-grey-dark-1;
-  padding: 3rem;
-  box-sizing: border-box;
 }
 
 .heading-primary {
@@ -24,9 +22,14 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
     /* 
-  animation-delay: 3s;  这个动画停留多长时间
-  animation-iteration-count: 3; 循环播放几次
-  */
+      animation-delay: 3s;  这个动画停留多长时间
+      animation-iteration-count: 3; 循环播放几次
+    */
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
 
   &--sub {
@@ -55,6 +58,15 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewX(2deg) skewY(2deg) scale(1.1);
