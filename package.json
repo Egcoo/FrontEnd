@@ -1,0 +1,30 @@
+{
+  "_comment": "The script section adjusts according to the file location",
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Learning progress of frontend",
+  "main": "README.md",
+  "scripts": {
+    "watch:sass": "node-sass CSS/Natours/sass/main.scss CSS/Natours/css/style.css -w",
+    "dev-server": "live-server",
+    "start": "npm-run-all --parallel dev-server watch:sass",
+    "compile:sass": "node-sass CSS/Natours/sass/main.scss CSS/Natours/css/style.comp.css",
+    "concat:css": "concat -o CSS/Natours/css/style.concat.css CSS/Natours/css/icon-font.css CSS/Natours/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" CSS/Natours/css/style.concat.css -o CSS/Natours/css/style.prefix.css",
+    "compress:css": "node-sass CSS/Natours/css/style.prefix.css CSS/Natours/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Egcoo/FrontEnd.git"
+  },
+  "author": "egcoo fan",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "concat": "^1.0.3",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
+  }
+}
