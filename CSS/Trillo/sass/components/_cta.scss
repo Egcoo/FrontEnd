@@ -1,0 +1,16 @@
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  flex: 1;
+
+  @include respond(bp-medium) {
+    padding: 2.5rem 0;
+  }
+
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
