@@ -1,0 +1,51 @@
+.story {
+  &__pictures {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+  }
+
+  &__img--1 {
+    width: 100%;
+    grid-row: 2 / 6;
+    grid-column: 2 / 6;
+
+    @include respond(bp-medium) {
+      grid-column: 1/5;
+      grid-row: 1/-1;
+    }
+  }
+
+  &__img--2 {
+    width: 115%;
+    grid-row: 4 / 6;
+    grid-column: 4 / 7;
+    z-index: 10;
+
+    @include respond(bp-medium) {
+      grid-row: 1/-1;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    /*
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  
+    */
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem;
+  }
+}

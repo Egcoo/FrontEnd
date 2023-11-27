@@ -1,0 +1,52 @@
+//max-content 	每列的大小设置为该列中最大网格元素的大小。
+//min-content 	每列的大小设置为该列中最小网格元素的大小。
+// max-content 	每行的大小设置为该行中最大网格元素的大小。
+// min-content 	每行的大小设置为该行中最小网格元素的大小。
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+
+ORDER:Base + typography > general layout + grid > page layout >components
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == bp-phone {
+    @media only screen and (max-width: 29.375em) {
+      //470px
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp-small {
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp-medium {
+    @media only screen and (max-width: 52em) {
+      //832px
+      @content;
+    }
+  }
+  @if $breakpoint == bp-large {
+    @media only screen and (max-width: 62.5em) {
+      //1000px
+      @content;
+    }
+  }
+  @if $breakpoint == bp-largest {
+    @media only screen and (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+}
