@@ -42,6 +42,10 @@ $ git config --list
 # 编辑 Git 配置文件
 $ git config -e [--global]
 
+# 查看用户信息
+$ git config user.name
+$ git config user.email
+
 # 设置提交代码时的用户信息
 $ git config [--global] user.name "[name]"
 $ git config [--global] user.email "[email address]"
@@ -216,7 +220,7 @@ git ls-files 命令会返回 Git 仓库中所有的 已跟踪文件（tracked fi
 ---
 
 ```shell
-# 增加一个新的远程仓库，并命名
+# 增加一个新的远程仓库，并命名(将本地仓库连接到远程仓库，这一步一般是你本地仓库初始化好了，然后建立了一个远程仓库，接着把本地仓库链接上去)
 $ git remote add [shortname] [url]
 
 # 上传本地指定分支到远程仓库
@@ -238,22 +242,26 @@ $ git push [remote] --all
 $ git restore [file]
 
 # 你把文件 add 到了暂存区,后来发现还是不要暂存这个修改,想从暂存区撤销出来（老方法需要两步）
-$ git restore --staged [fileName] ----> git checkout [file] (这一步是把对文件的新的修改删除)
+$ git restore --staged [fileName] ----> git checkout [file]
 
 # 恢复删除的文件,这会从暂存区恢复文件到工作区
 $ git restore <deleted-file>
 
-# 恢复暂存区的指定文件到工作区 [还没 add 到暂存区]
+# 修改了文件，但没 add 到暂存区，想把对文件的新的修改删除，如果暂存区有该[file] add 过的版本，就恢复暂存区的指定文件到工作区，没有就会报错
 $ git checkout [file]
 
 # 恢复某一个时段之前提交的状态到工作区
 $ git checkout [commitId]
 
 # 重置暂存区的指定文件，与上一次 commit 保持一致，但工作区不变
-$ git reset [file]
+$ git reset HEAD [file]
 
-# **重置暂存区与工作区**，与上一次 commit 保持一致
-$ git reset --hard [HEAD~1]
+# 只是修改了文件，没add，没commit，想要撤销修改，与上一次 commit 保持一致
+$ git reset --hard HEAD
+
+# 已经commit以后，撤销提交，重置暂存区与**工作区**，与上一次commit保持一致
+$ git log + copy 上一次commit的id
+$ git reset --hard  id
 
 # 撤销所有未被追踪的目录和文件
 $ git clean -dn ---> git clean -df

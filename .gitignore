@@ -5,6 +5,7 @@
 logs
 *.log
 npm-debug.log*
+.parcel-cache
 
 # Runtime data
 pids
