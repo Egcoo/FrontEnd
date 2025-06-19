@@ -2,10 +2,8 @@
 
 ## Questions remain
 
-1. **数值精度**部分，有效数字这时总是`1.xx...xx`的形式，其中`xx..xx`的部分保存在64位浮点数之中，最长可能为52位。为什么JavaScript 提供的有效数字最长为53个二进制位？✅ [Js中的数字存储](https://fengmumu1.github.io/2018/06/30/js-number/)，[面试必备之详解JS数字精度](https://segmentfault.com/a/1190000021684144)
-2. 
-
-
+1. **数值精度**部分，有效数字这时总是`1.xx...xx`的形式，其中`xx..xx`的部分保存在 64 位浮点数之中，最长可能为 52 位。为什么 JavaScript 提供的有效数字最长为 53 个二进制位？✅ [Js 中的数字存储](https://fengmumu1.github.io/2018/06/30/js-number/)，[面试必备之详解 JS 数字精度](https://segmentfault.com/a/1190000021684144)
+2.
 
 ## How to Code
 
@@ -67,8 +65,6 @@
 3. 语句(statement)和表达式(expression)：表达式产生值，而语句就是翻译我们行为的完整的句子。
 4. 注意：在模板文字(template literal) 中，我们只能插入表达式，不能插入语句。
 
-
-
 ### Display Type Conversion
 
 1. Number(mix), parseInt(string , radix), parseFloat(string), toString(radix), String(mix), Boolean()
@@ -81,7 +77,7 @@
 
 ### Implicit Conversion
 
-1. +"string" ，可以隐式转换 string 为Number类型。
+1. +"string" ，可以隐式转换 string 为 Number 类型。
 2. isNaN(), 检查一个值是否不是个数。
 3. isFinite(), 检查一个值是否是数字的最佳实践。
 
@@ -187,8 +183,6 @@
 3. 原始类型和引用类型在内存中的存储方式是相当不同的。基本类型存储在执行上下文中（但因为执行上下文在调用栈内，也可以说是在栈中），引用类型存储在堆中。
 4. const 不改变只适用于原始类型
 5. 引用类型：当你复制一个对象时，你只是在创建一个变量指向新对象。
-
-
 
 ### Math and Rounding
 
@@ -344,7 +338,7 @@ Maps:
 
 #### First class vs Higher-Order function
 
- first class function 只是编程语言有或者没有的一个功能
+first class function 只是编程语言有或者没有的一个功能
 
 1. JavaScript treats functions as first-class citizens
 2. This means that functions are simply values
@@ -357,7 +351,7 @@ Maps:
 
 有两个好处：1.可以拆分成更多的可重复使用和关联的部分。2.隐藏不必要的细节，允许我们创建抽象。
 
-#### Call & Apply & bind 
+#### Call & Apply & bind
 
 函数它们可以指定函数中的 this 指向哪个对象，以及传递参数给函数。
 
@@ -381,8 +375,6 @@ Maps:
 7. 由于闭包，函数不会失去和函数创建所在地的变量的链接。
 8. We do **NOT** have to manually create closures, this is a JavaScript feature that happens automatically. We can't even access closed-over variables explicitly. A closure is **NOT** a tangible JavaScript object
 
-
-
 ## DOM
 
 ### How Dom really works?
@@ -392,11 +384,7 @@ Maps:
 3. DOM tree is generated from an HTML document, which we can then interact with;
 4. DOM is a very complex API that contains lots of methods and properties to interact with the DOM tree.
 
-
-
 ![DOM](../img/DOM.png "DOM")
-
-
 
 ## Asynchronous
 
@@ -404,15 +392,9 @@ Maps:
 
 <img src="../img/promise.png" alt="The promise lifecycle" style="zoom:50%" >
 
-
-
 ### How Asynchronous JavaScript works behind the scene
 
 <img src="../img/asynchronousWorks.png" alt="How Asynchronous works" style="zoom:50%" >
-
-
-
-
 
 ## 5. 标准库
 
@@ -430,7 +412,7 @@ Object 对象的原生方法分两类：Object 静态方法（就定义在 Objec
 
 ### 5.2 属性描述对象
 
-#### 概述	
+#### 概述
 
 JavaScript 内部有一个针对属性的数据结构叫 "arrtibute object"，用来描述对象的属性，控制它的行为，比如该属性是否可写、可遍历等等，每一个属性都有，里面有一堆方法，用到再看。
 
@@ -519,7 +501,7 @@ a.slice(1) // ["b", "c"]
 var a = ['a', 'b', 'c'];
 a.slice(-2) // ["b", "c"]
 
-// 8. 
+// 8.
 ```
 
 ### 5.4 包装对象
@@ -543,9 +525,9 @@ toString()：返回对应的字符串形式。
 某些场合，原始类型的值会自动当作包装对象调用，即调用包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，并在使用后立刻销毁实例。
 
 ```javascript
-var s = 'Hello World';
+var s = "Hello World";
 s.x = 123;
-s.x // undefined
+s.x; // undefined
 ```
 
 调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。如果要为字符串添加属性，只有在它的原型对象`String.prototype`上定义
@@ -557,16 +539,16 @@ s.x // undefined
 ### 5.5 Boolean 对象
 
 ```javascript
-Boolean(undefined) // false
-Boolean(null) // false
-Boolean(0) // false
-Boolean('') // false
-Boolean(NaN) // false
+Boolean(undefined); // false
+Boolean(null); // false
+Boolean(0); // false
+Boolean(""); // false
+Boolean(NaN); // false
 ```
 
 ### 5.6 Number 对象
 
-包括静态属性和实例方法（继承了prototype），用到再看。
+包括静态属性和实例方法（继承了 prototype），用到再看。
 
 ### 5.7 String 对象
 
@@ -578,7 +560,7 @@ Boolean(NaN) // false
 
 #### 单线程模型
 
-JavaScript 只在一个线程上运行（JavaScript引擎有多个线程），只能同时执行一个任务，其他任务都在后面排队。
+JavaScript 只在一个线程上运行（JavaScript 引擎有多个线程），只能同时执行一个任务，其他任务都在后面排队。
 
 事件循环（Event Loop）：挂起处于等待中的任务，先运行排在后面的任务。等到 IO 操作返回了结果，再回过头，把挂起的任务继续执行下去。
 
@@ -592,7 +574,7 @@ JavaScript 运行时，除了一个正在运行的主线程，引擎还提供一
 
 #### 异步操作的几种模式
 
-1. 回调函数，优点是简单、容易理解和实现，缺点是不利于代码的阅读和维护，各个部分之间高度[耦合](https://en.wikipedia.org/wiki/Coupling_(computer_programming))（coupling），使得程序结构混乱、流程难以追踪（尤其是多个回调函数嵌套的情况），而且每个任务只能指定一个回调函数。
+1. 回调函数，优点是简单、容易理解和实现，缺点是不利于代码的阅读和维护，各个部分之间高度[耦合](<https://en.wikipedia.org/wiki/Coupling_(computer_programming)>)（coupling），使得程序结构混乱、流程难以追踪（尤其是多个回调函数嵌套的情况），而且每个任务只能指定一个回调函数。
 2. 事件监听，这种方法的优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以“[去耦合](https://en.wikipedia.org/wiki/Decoupling)”（decoupling），有利于实现模块化。缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。
 3. 发布/订阅模式，事件完全可以理解成“信号”，如果存在一个“信号中心”，某个任务执行完成，就向信号中心“发布”（publish）一个信号，其他任务可以向信号中心“订阅”（subscribe）这个信号，从而知道什么时候自己可以开始执行。
 
@@ -602,13 +584,13 @@ JavaScript 运行时，除了一个正在运行的主线程，引擎还提供一
 
 #### 概述
 
-DOM 是 JavaScript 操作网页的**接口规范**，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
+DOM 是 JavaScript 操作网页的**接口规范**，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
 
-浏览器会根据 DOM 模型，将结构化的文档（比如HTML 和 XML） 解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。
+浏览器会根据 DOM 模型，将结构化的文档（比如 HTML 和 XML） 解析成一系列的节点，再由这些节点组成一个树状结构（DOM Tree）。所有的节点和最终的树状结构，都有规范的对外接口。
 
-DOM 只是一个接口规范，可以用各种语言实现，所以严格来说，DOM 不是JavaScript 语法的一部分，只是最常用于 DOM 操作的语言。但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。
+DOM 只是一个接口规范，可以用各种语言实现，所以严格来说，DOM 不是 JavaScript 语法的一部分，只是最常用于 DOM 操作的语言。但是 DOM 操作是 JavaScript 最常见的任务，离开了 DOM，JavaScript 就无法控制网页。
 
-####  节点
+#### 节点
 
 DOM 的最小组成单位叫做节点（node），共有七种节点，浏览器原生提供一个节点对象（Node），七种节点都继承了 Node，所以会有一些共同的属性和方法。文档的树形结构（DOM 树），就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子。
 
@@ -640,7 +622,7 @@ DOM 提供操作接口，用来获取这三种关系的节点。比如，子节�
 
 #### NodeList
 
-`NodeList`实例是一个类似数组的对象，它的成员是节点对象，`NodeList`实例很像数组，可以使用`length`属性和`forEach`方法。但是，它不是数组，不能使用 `pop` 或 `push` 之类数组特有的方法，如果`NodeList`实例要使用数组方法，可以将其转为真正的数组。	
+`NodeList`实例是一个类似数组的对象，它的成员是节点对象，`NodeList`实例很像数组，可以使用`length`属性和`forEach`方法。但是，它不是数组，不能使用 `pop` 或 `push` 之类数组特有的方法，如果`NodeList`实例要使用数组方法，可以将其转为真正的数组。
 
 `Node.childNodes` 返回的是一个动态集合（动态集合就是一个活的集合，DOM 删除或新增一个相关节点，都会立刻反映在 NodeList 实例），其他的 NodeList 都是静态集合。
 
@@ -664,7 +646,7 @@ DOM 提供操作接口，用来获取这三种关系的节点。比如，子节�
 
 #### ChildNode
 
-如果一个元素有父节点，也就有了ChildNode 接口。
+如果一个元素有父节点，也就有了 ChildNode 接口。
 
 ## 9. 事件
 
@@ -677,6 +659,7 @@ DOM 节点的事件操作（监听和触发），都定义在`EventTarget`接口
 该接口主要提供三个实例方法。
 
 - `addEventListener()`：绑定事件的监听函数，一旦这个事件发生，就会执行监听函数。该方法没有返回值。
+
   - 该方法接受三个参数。
   - `type`：事件名称，大小写敏感。
   - `listener`：监听函数。事件发生时，会调用该监听函数。
@@ -697,11 +680,11 @@ DOM 节点的事件操作（监听和触发），都定义在`EventTarget`接口
 - 能够指定在哪个阶段（捕获阶段还是冒泡阶段）触发监听函数。
 - 除了 DOM 节点，其他对象（比如`window`、`XMLHttpRequest`等）也有这个接口，它等于是整个 JavaScript 统一的监听函数接口。
 
-#### this 的指向 
+#### this 的指向
 
 监听函数内部的`this`指向触发事件的那个元素节点。
 
-#### 事件的传播 
+#### 事件的传播
 
 一个事件发生后，会在子元素和父元素之间传播（propagation）。这种传播分成三个阶段。
 
